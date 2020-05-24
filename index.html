@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Reddit sg Generator</title>
+    <link href="source/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Reddit Singapore</h1>
+            <h1>Text Generator</h1>
+            <h2>Note: Text were geneated from the top 100 posts found on r/singapore. A second-order markov chain was
+                used to create the dictionary of probabilities. Source</h2>
+            <input id="button" type="button" value="Input" onclick="generate()">
+        </div>
+        <div id="contents">
+            <div class="post">
+                <div class="updownvote">
+                    <i class="fas fa-arrow-alt-circle-up postTheme"></i>
+                    <br>
+                    <i class="fas fa-arrow-alt-circle-down postTheme"></i>
+                </div>
+                <div class="postMain">
+                    <div class="postMeta">
+                        <img src="https://styles.redditmedia.com/t5_2qh8c/styles/communityIcon_b3bp3ewc9v141.png?width=256&s=12a68b3ce6ac384686121277e570cad30c9ccbb5"
+                            alt="Reddit Singapore Image">
+                        Posted by u/handsumboi 9 hours ago
+                    </div>
+                    <div class="postTitle">
+                        <div id="displayTitle"></div>
+                    </div>
+                    <div class="postContent">
+                        <div id="displayPost"></div>
+                    </div>
+                    <div class="postStats">
+                        <i class="fas fa-comment-alt postTheme"></i>
+                        999 Comments
+                        <i class="fas fa-gift postTheme"></i>
+                        Give Award
+
+                    </div>
+                </div>
+            </div>
+            <span>Post</span>
+            <span>content</span>
+            <div id="displayComment"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://kit.fontawesome.com/0067ac9303.js"></script>
+<script type="text/javascript" src="data/dictionary_reddit_title.js"></script>
+<script type="text/javascript" src="data/dictionary_reddit_post.js"></script>
+<script type="text/javascript" src="data/dictionary_reddit_comment.js"></script>
+<script type="text/javascript" src="source/js/generate.js"></script>
