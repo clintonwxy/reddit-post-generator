@@ -1,5 +1,3 @@
-
-
 function generateSentence(dictionary) {
 
     var randomFirstTwoWords = dictionary["first"][Math.floor(Math.random() * dictionary["first"].length) - 1];
@@ -36,10 +34,33 @@ function generateSentences(dictionary, lower, upper) {
 
 function generate() {
 
+    document.getElementById("postUpvoteNumber").innerHTML = Math.floor(Math.random() * 1000);
+    document.getElementById("postPoster").innerHTML = dictionary_reddit_names[Math.floor(Math.random() * dictionary_reddit_names.length)];
+    var postTime = Math.floor(Math.random() * 22) + 1;
+    document.getElementById("postTime").innerHTML = postTime
+
+    document.getElementById("postComment1Poster").innerHTML = dictionary_reddit_names[Math.floor(Math.random() * dictionary_reddit_names.length)];
+    document.getElementById("postComment2Poster").innerHTML = dictionary_reddit_names[Math.floor(Math.random() * dictionary_reddit_names.length)];
+    document.getElementById("postComment3Poster").innerHTML = dictionary_reddit_names[Math.floor(Math.random() * dictionary_reddit_names.length)];
+
+    document.getElementById("postComment1Points").innerHTML = Math.floor(Math.random() * 30);
+    document.getElementById("postComment2Points").innerHTML = Math.floor(Math.random() * 30);
+    document.getElementById("postComment3Points").innerHTML = Math.floor(Math.random() * 30);
+
+    var commentTime = Math.floor(Math.random() * postTime);
+    document.getElementById("postComment1Hours").innerHTML = commentTime;
+    document.getElementById("postComment2Hours").innerHTML = Math.floor(Math.random() * commentTime);
+    document.getElementById("postComment3Hours").innerHTML = Math.floor(Math.random() * postTime);
+
+
     document.getElementById("displayTitle").innerHTML = generateSentences(dictionary_reddit_title, 1, 1);
     document.getElementById("displayPost").innerHTML = generateSentences(dictionary_reddit_post, 3, 5);
-    document.getElementById("displayComment").innerHTML = generateSentences(dictionary_reddit_comment, 1, 2);
+    document.getElementById("displayComment1").innerHTML = generateSentences(dictionary_reddit_comment, 1, 2);
+    document.getElementById("displayComment2").innerHTML = generateSentences(dictionary_reddit_comment, 1, 2);
+    document.getElementById("displayComment3").innerHTML = generateSentences(dictionary_reddit_comment, 1, 2);
 
 }
+
+generate()
 
 

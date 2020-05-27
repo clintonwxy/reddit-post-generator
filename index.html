@@ -12,50 +12,178 @@
 
 <body>
     <div id="container">
+
+        <!--Left Half: Description-->
+
         <div id="header">
-            <h1>Reddit Singapore</h1>
+            <h1 id="mainHeader">r/singapore</h1>
             <h1>Text Generator</h1>
+            <input id="generateButton" type="button" value="Input" onclick="generate()">
             <h2>Note: Text were geneated from the top 100 posts found on r/singapore. A second-order markov chain was
                 used to create the dictionary of probabilities. Source</h2>
-            <input id="button" type="button" value="Input" onclick="generate()">
         </div>
+
+        <!--Right Left Half: Main Application-->
+
         <div id="contents">
+
+            <!--Generated Post Title and Contents-->
+
             <div class="post">
                 <div class="updownvote">
-                    <i class="fas fa-arrow-alt-circle-up postTheme"></i>
-                    <br>
-                    <i class="fas fa-arrow-alt-circle-down postTheme"></i>
+                    <i class="fas fa-arrow-alt-circle-up postTheme arrows"></i>
+                    <div id="postUpvoteNumber" class="textTheme postTextSize postTextStrong arrows"></div>
+                    <i class="fas fa-arrow-alt-circle-down postTheme arrows"></i>
                 </div>
                 <div class="postMain">
-                    <div class="postMeta">
+
+                    <!--Post Metadata-->
+
+                    <div class="postMeta postTheme postTextSize">
                         <img src="https://styles.redditmedia.com/t5_2qh8c/styles/communityIcon_b3bp3ewc9v141.png?width=256&s=12a68b3ce6ac384686121277e570cad30c9ccbb5"
                             alt="Reddit Singapore Image">
-                        Posted by u/handsumboi 9 hours ago
+                        Posted by u/
+                        <div id="postPoster"></div>
+                        &nbsp;
+                        <div id="postTime"></div>
+                        &nbsp;
+                        hours ago
                     </div>
-                    <div class="postTitle">
+
+                    <!--Post Title-->
+
+                    <div class="postTitle textTheme">
                         <div id="displayTitle"></div>
                     </div>
-                    <div class="postContent">
+
+                    <!--Post Contents-->
+
+                    <div class="textTheme">
                         <div id="displayPost"></div>
                     </div>
-                    <div class="postStats">
-                        <i class="fas fa-comment-alt postTheme"></i>
-                        999 Comments
-                        <i class="fas fa-gift postTheme"></i>
-                        Give Award
 
+                    <!--Post Reactions-->
+
+                    <div class="postStats postTheme postTextSize">
+                        <i class="fas fa-comment-alt postTheme postStatsIcons"></i>
+                        3 Comments &nbsp;
+                        <i class="fas fa-gift postTheme postStatsIcons"></i>
+                        Give Award &nbsp;
+                        <i class="fas fa-share postTheme postStatsIcons"></i>
+                        Share &nbsp;
+                        <i class="fas fa-bookmark postTheme postStatsIcons"></i>
+                        Save &nbsp;
+                        <i class="fas fa-ban postTheme postStatsIcons"></i>
+                        Hide &nbsp;
+                        <i class="fas fa-flag postTheme postStatsIcons"></i>
+                        Report &nbsp;
+                    </div>
+
+                    <!--Post Sign Up and Login Buttons-->
+
+                    <div class="postLogin postTheme">
+                        <div>Log in or sign up to leave a comment</div>
+                        <div>
+                            <button type="button" class="btn">LOG IN</button>
+                            <button type="button" class="btn" id="signUpBtn">SIGN UP</button>
+                        </div>
+                    </div>
+
+                    <!--Post Sort By Options-->
+
+                    <div class="postSortBy postTheme postTextSize">
+                        SORT BY &emsp;
+                        <div class="postSortByOptions">Best</div>
+                        <i class="fas fa-caret-down postTheme postStatsIcons"></i>
                     </div>
                 </div>
             </div>
-            <span>Post</span>
-            <span>content</span>
-            <div id="displayComment"></div>
+
+            <!--Post Comments-->
+            <!--First Comment-->
+
+            <div class="post">
+                <div class="updownvote">
+                    <i class="fas fa-arrow-alt-circle-up postTheme arrows"></i>
+                    <i class="fas fa-arrow-alt-circle-down postTheme arrows"></i>
+                </div>
+                <div class="postMain">
+                    <div class="postCommentTitle postTextSize">
+                        <div class="textTheme postTextStrong">
+                            <div id="postComment1Poster"></div>
+                        </div>
+                        &emsp;
+                        <div class="postTheme postComment">
+                            <div id="postComment1Points"></div>
+                            &thinsp; points &bull; &thinsp;
+                            <div id="postComment1Hours"></div>
+                            &thinsp; hours ago
+                        </div>
+                    </div>
+                    <div class="textTheme">
+                        <div id="displayComment1"></div>
+
+                        <!--First Comment: Subcomment-->
+
+                        <div class="post">
+                            <div class="updownvote">
+                                <i class="fas fa-arrow-alt-circle-up postTheme arrows"></i>
+                                <i class="fas fa-arrow-alt-circle-down postTheme arrows"></i>
+                            </div>
+                            <div class="postMain">
+                                <div class="postCommentTitle postTextSize">
+                                    <div class="textTheme postTextStrong">
+                                        <div id="postComment2Poster"></div>
+                                    </div>
+                                    &emsp;
+                                    <div class="postTheme postComment">
+                                        <div id="postComment2Points"></div>
+                                        &thinsp; points &bull; &thinsp;
+                                        <div id="postComment2Hours"></div>
+                                        &thinsp; hours ago
+                                    </div>
+                                </div>
+                                <div class="textTheme">
+                                    <div id="displayComment2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Second Comment-->
+
+            <div class="post">
+                <div class="updownvote">
+                    <i class="fas fa-arrow-alt-circle-up postTheme arrows"></i>
+                    <i class="fas fa-arrow-alt-circle-down postTheme arrows"></i>
+                </div>
+                <div class="postMain">
+                    <div class="postCommentTitle postTextSize">
+                        <div class="textTheme postTextStrong">
+                            <div id="postComment3Poster"></div>
+                        </div>
+                        &emsp;
+                        <div class="postTheme postComment">
+                            <div id="postComment3Points"></div>
+                            &thinsp; points &bull; &thinsp;
+                            <div id="postComment3Hours"></div>
+                            &thinsp; hours ago
+                        </div>
+                    </div>
+                    <div class="textTheme">
+                        <div id="displayComment3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
 <script src="https://kit.fontawesome.com/0067ac9303.js"></script>
+<script type="text/javascript" src="data/dictionary_reddit_names.js"></script>
 <script type="text/javascript" src="data/dictionary_reddit_title.js"></script>
 <script type="text/javascript" src="data/dictionary_reddit_post.js"></script>
 <script type="text/javascript" src="data/dictionary_reddit_comment.js"></script>
