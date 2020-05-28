@@ -34,7 +34,7 @@ function generateSentences(dictionary, lower, upper) {
 
 function generate() {
 
-    document.getElementById("postUpvoteNumber").innerHTML = Math.floor(Math.random() * 1000);
+    document.getElementById("postUpvoteNumber").innerHTML = Math.floor(Math.random() * 150);
     document.getElementById("postPoster").innerHTML = dictionary_reddit_names[Math.floor(Math.random() * dictionary_reddit_names.length)];
     var postTime = Math.floor(Math.random() * 22) + 1;
     document.getElementById("postTime").innerHTML = postTime
@@ -51,7 +51,6 @@ function generate() {
     document.getElementById("postComment1Hours").innerHTML = commentTime;
     document.getElementById("postComment2Hours").innerHTML = Math.floor(Math.random() * commentTime);
     document.getElementById("postComment3Hours").innerHTML = Math.floor(Math.random() * postTime);
-
 
     document.getElementById("displayTitle").innerHTML = generateSentences(dictionary_reddit_title, 1, 1);
     document.getElementById("displayPost").innerHTML = generateSentences(dictionary_reddit_post, 3, 5);
